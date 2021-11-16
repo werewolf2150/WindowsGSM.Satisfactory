@@ -12,28 +12,28 @@ namespace WindowsGSM.Plugins
 {
     public class Satisfactory : SteamCMDAgent
     {
-        // - Plugin Details
+// - Plugin Details
         public Plugin Plugin = new Plugin
         {
             name = "WindowsGSM.Satisfactory", // WindowsGSM.XXXX
             author = "werewolf2150",
             description = "WindowsGSM plugin for supporting Satisfactory Dedicated Server",
             version = "1.0",
-            url = "https://github.com/dkdue/WindowsGSM.Satisfactory", // Github repository link (Best practice)
+            url = "https://github.com/werewolf2150/WindowsGSM.Satisfactory", // Github repository link (Best practice)
             color = "#34c9eb" // Color Hex
         };
 
-        // - Settings properties for SteamCMD installer
+// - Settings properties for SteamCMD installer
         public override bool loginAnonymous => true;
         public override string AppId => "1690800"; // Game server appId, Satisfactory 1690800
 
-        // - Standard Constructor and properties
+// - Standard Constructor and properties
         public Satisfactory(ServerConfig serverData) : base(serverData) => base.serverData = _serverData = serverData;
         private readonly ServerConfig _serverData;
         public string Error, Notice;
 
 
-        // - Game server Fixed variables
+// - Game server Fixed variables
         public override string StartPath => @"FactoryServer.exe"; // Game server start path
         public string FullName = "Satisfactory Dedicated Server"; // Game server FullName
         public bool AllowsEmbedConsole = true;  // Does this server support output redirect?
@@ -41,29 +41,27 @@ namespace WindowsGSM.Plugins
         public object QueryMethod = new A2S(); // Query method should be use on current server type. Accepted value: null or new A2S() or new FIVEM() or new UT3()
 
 
-        // - Game server default values
+// - Game server default values
         public string Port = "7777"; // Default port
         public string QueryPort = "15000"; // Default query port
-        public string Defaultmap = "testLevel"; // Default map name
+        public string Defaultmap = "Desert"; // Default map name
         public string Maxplayers = "4"; // Default maxplayers
         public string Additional = "-unattended"; // Additional server start parameter
 
 
-        // - Create a default cfg for the game server after installation
+// - Create a default cfg for the game server after installation
         public async void CreateServerCFG()
         {
-             //Not needed config for now, used Dedicated_Server_Manager.exe for config the server
+         //Not needed config for now, used Dedicated_Server_Manager.exe for config the server
         }
 
-        // - Start server function, return its Process to WindowsGSM
+// - Start server function, return its Process to WindowsGSM
         public async Task<Process> Start()
         {
-
-
             string shipExePath = Functions.ServerPath.GetServersServerFiles(_serverData.ServerID, StartPath);
 
-            // Prepare start parameter
-			string param = $" -log "; // Set basic parameters
+// Prepare start parameter
+			//string param = $" -log "; // Set basic parameters
 			param += string.IsNullOrWhiteSpace(_serverData.ServerPort) ? string.Empty : $" -port={_serverData.ServerPort}"; 
 			param += string.IsNullOrWhiteSpace(_serverData.ServerParam) ? string.Empty : $" {_serverData.ServerParam}"; 
 			//param += string.IsNullOrWhiteSpace(_serverData.ServerMaxPlayer) ? string.Empty : $" -MaxPlayers={_serverData.ServerMaxPlayer}";
@@ -72,12 +70,12 @@ namespace WindowsGSM.Plugins
 
 
 
-			// Saw this in another plugin from Kickbut101. Comment on it is right, this was useful. 
-            // Output the startupcommands used. Helpful for troubleshooting server commands and testing them out - leaving this in because it's helpful af.			
-			var startupCommandsOutputTxtFile = ServerPath.GetServersServerFiles(_serverData.ServerID, "startupCommandsUsed.log");
+// Saw this in another plugin. Comment on it is right, this was useful. 
+// Output the startupcommands used. Helpful for troubleshooting server commands and testing them out - leaving this in because it's helpful af.			
+		var startupCommandsOutputTxtFile = ServerPath.GetServersServerFiles(_serverData.ServerID, "startupCommandsUsed.log");
             File.WriteAllText(startupCommandsOutputTxtFile, $"{param}");
 
-            // Prepare Process
+// Prepare Process
             var p = new Process
             {
                 StartInfo =
@@ -91,7 +89,7 @@ namespace WindowsGSM.Plugins
                 EnableRaisingEvents = true
             };
 
-            // Set up Redirect Input and Output to WindowsGSM Console if EmbedConsole is on
+// Set up Redirect Input and Output to WindowsGSM Console if EmbedConsole is on
             if (AllowsEmbedConsole)
             {
                 p.StartInfo.CreateNoWindow = true;
@@ -112,7 +110,6 @@ namespace WindowsGSM.Plugins
                     Error = e.Message;
                     return null; // return null if fail to start
                 }
-
                 p.BeginOutputReadLine();
                 p.BeginErrorReadLine();
                 return p;
@@ -132,7 +129,7 @@ namespace WindowsGSM.Plugins
         }
 
 
-		// - Stop server function
+// - Stop server function
         public async Task Stop(Process p)
         {
             await Task.Run(() =>
