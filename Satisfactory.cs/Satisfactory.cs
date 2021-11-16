@@ -46,7 +46,7 @@ namespace WindowsGSM.Plugins
         public string QueryPort = "15000"; // Default query port
         public string Defaultmap = "testLevel"; // Default map name
         public string Maxplayers = "4"; // Default maxplayers
-        public string Additional = "-unattended"; // Additional server start parameter
+        public string Additional = ""; // Additional server start parameter
 
 
         // - Create a default cfg for the game server after installation
@@ -63,7 +63,7 @@ namespace WindowsGSM.Plugins
             string shipExePath = Functions.ServerPath.GetServersServerFiles(_serverData.ServerID, StartPath);
 
             // Prepare start parameter
-			//string param = $" -log "; // Set basic parameters
+			string param = $" -unattended "; // Set basic parameters
 			param += string.IsNullOrWhiteSpace(_serverData.ServerPort) ? string.Empty : $" -port={_serverData.ServerPort}"; 
 			param += string.IsNullOrWhiteSpace(_serverData.ServerParam) ? string.Empty : $" {_serverData.ServerParam}"; 
 			//param += string.IsNullOrWhiteSpace(_serverData.ServerMaxPlayer) ? string.Empty : $" -MaxPlayers={_serverData.ServerMaxPlayer}";
