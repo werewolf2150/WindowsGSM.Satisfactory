@@ -19,7 +19,7 @@ namespace WindowsGSM.Plugins
             author = "werewolf2150",
             description = "WindowsGSM plugin for supporting Satisfactory Dedicated Server",
             version = "1.0",
-            url = "https://github.com/dkdue/WindowsGSM.Satisfactory", // Github repository link (Best practice)
+            url = "https://github.com/werewolf2150/WindowsGSM.Satisfactory", // Github repository link (Best practice)
             color = "#34c9eb" // Color Hex
         };
 
@@ -63,7 +63,7 @@ namespace WindowsGSM.Plugins
             string shipExePath = Functions.ServerPath.GetServersServerFiles(_serverData.ServerID, StartPath);
 
             // Prepare start parameter
-			string param = $" -log "; // Set basic parameters
+			//string param = $" -log "; // Set basic parameters
 			param += string.IsNullOrWhiteSpace(_serverData.ServerPort) ? string.Empty : $" -port={_serverData.ServerPort}"; 
 			param += string.IsNullOrWhiteSpace(_serverData.ServerParam) ? string.Empty : $" {_serverData.ServerParam}"; 
 			//param += string.IsNullOrWhiteSpace(_serverData.ServerMaxPlayer) ? string.Empty : $" -MaxPlayers={_serverData.ServerMaxPlayer}";
