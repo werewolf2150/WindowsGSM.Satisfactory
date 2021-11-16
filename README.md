@@ -1,2 +1,2 @@
 # WindowsGSM.Satisfactory
-Plugin pour fir Windows GSM
+Plugin pour for Windows GSM
