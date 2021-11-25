@@ -7,7 +7,6 @@ using WindowsGSM.GameServer.Engine;
 using System.IO;
 using System.Linq;
 using System.Net;
-using WindowsGSM.Installer;
 
 
 namespace WindowsGSM.Plugins
