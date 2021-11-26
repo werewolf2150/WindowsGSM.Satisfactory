@@ -27,4 +27,4 @@ https://store.steampowered.com/app/1690800/Satisfactory_Survival/
 3. manage serveur directly in game.
 
 # License
-This project is licensed under the MIT License  - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License  - see the [LICENSE.md](LICENSE) file for details
