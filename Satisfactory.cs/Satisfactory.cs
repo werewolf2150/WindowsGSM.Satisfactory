@@ -19,7 +19,7 @@ namespace WindowsGSM.Plugins
             name = "WindowsGSM.Satisfactory", // WindowsGSM.XXXX
             author = "werewolf2150",
             description = "WindowsGSM plugin for supporting Satisfactory Dedicated Server",
-            version = "1.2",
+            version = "1.3",
             url = "https://github.com/werewolf2150/WindowsGSM.Satisfactory", // Github repository link (Best practice)
             color = "#34c9eb" // Color Hex
         };
