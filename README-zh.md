@@ -71,5 +71,5 @@ https://store.steampowered.com/app/1690800/Satisfactory_Survival/
 
 # 许可协议
 
-本软件遵循 MIT License 许可协议，详情请参考 [LICENSE.md](LICENSE.md)。
+本软件遵循 MIT License 许可协议，详情请参考 [LICENSE.md](LICENSE)。
 
