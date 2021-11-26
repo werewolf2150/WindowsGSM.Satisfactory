@@ -13,9 +13,13 @@ https://store.steampowered.com/app/1690800/Satisfactory_Survival/
   3. Click [RELOAD PLUGINS] button or restart WindowsGSM
 
 # Settings
-1. Open the folder where you have the server installed.
-2. Run Dedicated_Server_Manager.exe
-3. Configure the server to your liking.
+  1. Open game and connect
+  2. First connection initialise parameters
+  3. manage serveur directly in game.
+
+# Problems
+1. No stop serveur by windowsGSM -> Manage serveur by game
+2. Update not working -> reboot serveur, update serveur by WindowsGSM
 
 # License
 This project is licensed under the MIT License
