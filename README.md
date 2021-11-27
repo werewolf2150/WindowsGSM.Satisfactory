@@ -1,4 +1,4 @@
-# WindowsGSM.Satisfactory.Experimental
+# WindowsGSM.Satisfactory
 WindowsGSM plugin that provides Satisfactory Dedicated server support!
 
 - [简体中文](README-zh.md)
