@@ -26,7 +26,7 @@ namespace WindowsGSM.Plugins
 
         // - Settings properties for SteamCMD installer
         public override bool loginAnonymous => true;
-        public override string AppId => "1690800"; // Game server appId Steam
+        public override string AppId => "1690800 -beta public"; // Game server appId Steam
 
         // - Standard Constructor and properties
         public Satisfactory(ServerConfig serverData) : base(serverData) => base.serverData = _serverData = serverData;
