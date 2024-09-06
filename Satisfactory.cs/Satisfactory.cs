@@ -16,17 +16,22 @@ namespace WindowsGSM.Plugins
         // - Plugin Details
         public Plugin Plugin = new Plugin
         {
-            name = "WindowsGSM.Satisfactory.Early", // WindowsGSM.XXXX
+            name = "WindowsGSM.Satisfactory", // WindowsGSM.XXXX
             author = "werewolf2150",
             description = "WindowsGSM plugin for supporting Satisfactory Dedicated Server Early Access",
-            version = "1.3",
+            version = "1.5",
             url = "https://github.com/werewolf2150/WindowsGSM.Satisfactory", // Github repository link (Best practice)
             color = "#34c9eb" // Color Hex
         };
 
         // - Settings properties for SteamCMD installer
         public override bool loginAnonymous => true;
-        public override string AppId => "1690800 -beta public"; // Game server appId Steam
+        // Latest Main Release
+        public override string AppId => "1690800"; // Game server appId Steam
+        // Latest experimental branch 
+        //public override string AppId => "1690800 -beta experimental"; // Game server appId Steam with experimental
+        
+
 
         // - Standard Constructor and properties
         public Satisfactory(ServerConfig serverData) : base(serverData) => base.serverData = _serverData = serverData;
@@ -35,8 +40,8 @@ namespace WindowsGSM.Plugins
 
 
         // - Game server Fixed variables
-        public override string StartPath => @"Engine\Binaries\Win64\UE4Server-Win64-Shipping.exe"; // Game server start path
-        public string FullName = "Satisfactory Dedicated Server Early"; // Game server FullName
+        public override string StartPath => @"Engine\Binaries\Win64\UnrealServer-Win64-Shipping.exe"; // Game server start path
+        public string FullName = "Satisfactory Dedicated Server"; // Game server FullName
         public bool AllowsEmbedConsole = true;  // Does this server support output redirect?
         public int PortIncrements = 1; // This tells WindowsGSM how many ports should skip after installation
 
